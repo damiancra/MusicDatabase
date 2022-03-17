@@ -1,6 +1,7 @@
 package com.example.animals.rest;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.websocket.server.PathParam;
@@ -21,9 +22,9 @@ import com.example.animals.service.AnimalsServiceDB;
 @RestController
 public class AnimalsController {
 	
-	private AnimalsServiceList service; //CDI - context & dependency injection
+	private AnimalsServiceDB service; //CDI - context & dependency injection
 	
-	public AnimalsController(AnimalsServiceList service) {
+	public AnimalsController(AnimalsServiceDB service) {
 		super();
 		this.service = service;
 	}
@@ -40,27 +41,26 @@ public class AnimalsController {
 	//READ
 		@GetMapping("readAll")
 		public List<Animals> readAnimal() {
-			return this.animals;
+			return this.service.read();
 		}
 		
 	//READ BY ID
 		@GetMapping("/readById")
 		public Animals getById(@PathVariable int id) {
-			return this.animals.get(id);
+			return this.service.readOne(id);
 		}
 		
 		
 	//UPDATE
 		@PutMapping("/update/{id}")
 		public Animals update(@PathVariable int id, @RequestBody Animals updated) {
-			this.animals.set(id, updated);
-			return this.animals.get(id);
+			return this.service.update(id, updated);
 		}
 		
 	//DELETE
 		@DeleteMapping("/delete")
-		public void delete(@PathParam("id") int id) {
-			this.animals.remove(id);
+		public Animals delete(@PathParam("id") int id) {
+			return this.service.delete(id);
 		}
 		
 }

@@ -1,48 +1,49 @@
 package com.example.animals.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.example.animals.domain.Animals;
+import com.example.animals.repo.AnimalsRepo;
 
 @Service
-public class AnimalsServiceList implements AnimalsInterface {
+public class AnimalsServiceDB implements AnimalsInterface {
+
+	private AnimalsRepo repo; //inject dependency
 	
-	//STORE INFO IN, ALTERNATIVE TO DB:
-			private List<Animals> animals = new ArrayList<>();
+	public AnimalsServiceDB(AnimalsRepo repo) {
+		super();
+		this.repo = repo;
+	}
 
 	@Override
 	public Animals create(Animals x) {
-		x.setId((long) this.animals.indexOf(x));//added this to update id variable with array index
-		this.animals.add(x);
-		Animals created = this.animals.get(this.animals.size()-1);
-		return created;
+		// TODO Auto-generated method stub
+		return this.repo.save(x);
 	}
 
 	@Override
 	public List<Animals> read() {
 		// TODO Auto-generated method stub
-		return this.animals;
+		return null;
 	}
 	
 	public Animals readOne(int id) {
 		// TODO Auto-generated method stub
-		return this.animals.get(id);
+		return null;
 	}
 
 	@Override
 	public Animals update(int id, Animals y) {
 		// TODO Auto-generated method stub
-		this.animals.set(id, y);
-		return this.animals.get(id);
+		return null;
 	}
 
 	@Override
 	public Animals delete(int id) {
 		// TODO Auto-generated method stub
-		return this.animals.remove(id);
+		return null;
 	}
 
 }
