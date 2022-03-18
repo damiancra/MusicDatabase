@@ -1,5 +1,7 @@
 package com.example.animals.domain;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +10,7 @@ import javax.persistence.Id;
 @Entity // marking this class as a table for SQL
 public class Animals {
 	
-	// create table table_name(
+	// create table animals(
 	// id int not null auto_increment,
 	// breed varchar(255),
 	// age int,
@@ -19,6 +21,7 @@ public class Animals {
 	@Id // marks the field below as a primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto increment
 	private Long id;
+	
 	private String breed;
 	private int age;
 	private String gender;
@@ -75,6 +78,31 @@ public class Animals {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	
+//	int x =10;
+//	String a = "hello";
+//	String b = new String("hello");
+	
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, breed, gender, id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Animals other = (Animals) obj;
+		return age == other.age && Objects.equals(breed, other.breed) && Objects.equals(gender, other.gender)
+				&& Objects.equals(id, other.id);
+	}
+
 	
 	
 }

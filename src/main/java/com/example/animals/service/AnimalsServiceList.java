@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.animals.domain.Animals;
 
 @Service
-public class AnimalsServiceList implements AnimalsInterface {
+public class AnimalsServiceList implements AnimalsInterface<Integer> {
 	
 	//STORE INFO IN, ALTERNATIVE TO DB:
 			private List<Animals> animals = new ArrayList<>();
@@ -17,7 +17,7 @@ public class AnimalsServiceList implements AnimalsInterface {
 	public Animals create(Animals x) {
 		x.setId((long) this.animals.indexOf(x));//added this to update id variable with array index
 		this.animals.add(x);
-		Animals created = this.animals.get(this.animals.size()-1);
+		Animals created = this.animals.get(this.animals.size() -1);
 		return created;
 	}
 
@@ -27,22 +27,22 @@ public class AnimalsServiceList implements AnimalsInterface {
 		return this.animals;
 	}
 	
-	public Animals readOne(int id) {
+	public Animals readOne(Integer id) {
 		// TODO Auto-generated method stub
 		return this.animals.get(id);
 	}
 
 	@Override
-	public Animals update(int id, Animals y) {
+	public Animals update(Integer id, Animals y) {
 		// TODO Auto-generated method stub
 		this.animals.set(id, y);
 		return this.animals.get(id);
 	}
 
 	@Override
-	public Animals delete(int id) {
+	public Animals delete(Integer id) {
 		// TODO Auto-generated method stub
-		return this.animals.remove(id);
+		return this.animals.remove((int)id);
 	}
 
 }
