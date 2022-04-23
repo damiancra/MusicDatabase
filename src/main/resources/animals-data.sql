@@ -1,1 +1,0 @@
-INSERT INTO `music`(`year`,`artist`,`song`) VALUES(1978,'Fleetwood Mac','The Chain');
