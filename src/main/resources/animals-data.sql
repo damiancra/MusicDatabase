@@ -1,1 +1,1 @@
-INSERT INTO `animals`(`age`,`breed`,`gender`) VALUES(4,'Mammal','f');
+INSERT INTO `music`(`year`,`artist`,`song`) VALUES(1978,'Fleetwood Mac','The Chain');
