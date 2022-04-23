@@ -1,6 +1,7 @@
-package com.example.animals.domain;
+package com.example.music.domain;
 
 import java.util.Objects;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,13 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity // marking this class as a table for SQL
-public class Animals {
+public class Music {
 	
-	// create table animals(
+	// create table music(
 	// id int not null auto_increment,
-	// breed varchar(255),
-	// age int,
-	// gender varchar(255),
+	// artist varchar(255),
+	// year int,
+	// song varchar(255),
 	// primary key(id)),
 	
 	//variables - columns in the table
@@ -22,39 +23,39 @@ public class Animals {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto increment
 	private Long id;
 	
-	private String breed;
-	private int age;
-	private String gender;
+	private String artist;
+	private int year;
+	private String song;
 	
 	//constructors - 3 types
 	//overloading - polymorphism
 	
 	// 1 - default constructor - empty one
-	public Animals() {
+	public Music() {
 		super();
 	}
 	
 	// 2 - constructor with id
-	public Animals(Long id, String breed, int age, String gender) {
+	public Music(Long id, String artist, int year, String song) {
 		super();
 		this.id = id;
-		this.breed = breed;
-		this.age = age;
-		this.gender = gender;
+		this.artist = artist;
+		this.year = year;
+		this.song = song;
 	}
 	
 	// 3 - constructor without id
-	public Animals(String breed, int age, String gender) {
+	public Music(String artist, int year, String song) {
 		super();
-		this.breed = breed;
-		this.age = age;
-		this.gender = gender;
+		this.artist = artist;
+		this.year = year;
+		this.song = song;
 	}
 	
 	
 	//getters & setters
-	public String getBreed() {
-		return breed;
+	public String getArtist() {
+		return artist;
 	}
 
 	public Long getId() {
@@ -63,20 +64,20 @@ public class Animals {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public void setBreed(String breed) {
-		this.breed = breed;
+	public void setArtist(String artist) {
+		this.artist = artist;
 	}
-	public int getAge() {
-		return age;
+	public int getYear() {
+		return year;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setYear(int year) {
+		this.year = year;
 	}
-	public String getGender() {
-		return gender;
+	public String getSong() {
+		return song;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setSong(String song) {
+		this.song = song;
 	}
 	
 //	int x =10;
@@ -87,7 +88,7 @@ public class Animals {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(age, breed, gender, id);
+		return Objects.hash(year, artist, song, id);
 	}
 
 	@Override
@@ -98,8 +99,8 @@ public class Animals {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Animals other = (Animals) obj;
-		return age == other.age && Objects.equals(breed, other.breed) && Objects.equals(gender, other.gender)
+		Music other = (Music) obj;
+		return year == other.year && Objects.equals(artist, other.artist) && Objects.equals(song, other.song)
 				&& Objects.equals(id, other.id);
 	}
 

@@ -1,6 +1,7 @@
-package com.example.animals.service;
+package com.example.music.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,28 +16,29 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 
-import com.qa.animals.domain.Animals;
-import com.qa.animals.repo.AnimalsRepo;
+import com.example.music.domain.Music;
+import com.example.music.repo.MusicRepo;
+import com.example.music.service.MusicServiceDB;
 
 @SpringBootTest
 @ActiveProfiles("test")
-public class AnimalsServiceDBTest {
+public class MusicServiceDBTest {
 
 	// data
-		private Animals input;
-		private Animals returned;
+		private Music input;
+		private Music returned;
 
 		@Autowired // the class we are testing
-		private AnimalsServiceDB serv;
+		private MusicServiceDB serv;
 
 		@MockBean // this is the class we are dependent on so have to mock
-		private AnimalsRepo rep;
+		private MusicRepo rep;
 
 		@BeforeEach
 		void setUp() {
 //			System.out.println("before");
-			input = new Animals("Reptile", 10, "Male");
-			returned = new Animals(1L, "Reptile", 10, "Male");
+			input = new Music("Eric Prydz", 2001, "Call On Me");
+			returned = new Music(1L, "Eric Prydz", 2001, "Call On Me");
 		}
 
 		@Test
@@ -58,7 +60,7 @@ public class AnimalsServiceDBTest {
 		void testRead() {
 //			System.out.println("test 2");
 			// GIVEN
-			List<Animals> readList = new ArrayList<>();
+			List<Music> readList = new ArrayList<>();
 			readList.add(input);
 			// WHEN
 			Mockito.when(this.rep.findAll()).thenReturn(readList);
@@ -75,7 +77,7 @@ public class AnimalsServiceDBTest {
 			// GIVEN
 			Long id = 1L;// method input
 			// variables setup in method
-			Optional<Animals> optAnim = Optional.of(returned);
+			Optional<Music> optAnim = Optional.of(returned);
 			// WHEN a certain method is called, return ....
 			Mockito.when(this.rep.findById(id)).thenReturn(optAnim);
 			// THEN check what was returned is equal to what was expected
@@ -89,12 +91,12 @@ public class AnimalsServiceDBTest {
 		void testUpdate() {
 			// GIVEN - id, object
 			Long id = 1L;
-			// NEW ANIMAL OBJECT FOR INPUT TO UPDATE METHOD
-			Animals toUpdate = new Animals("Mammal", 8, "F");
-			// METHOD USES AN OPTIONAL VERSION OF THE ANIMAL OBJECT
-			Optional<Animals> opt = Optional.of(returned);
+			// NEW MUSIC OBJECT FOR INPUT TO UPDATE METHOD
+			Music toUpdate = new Music("Fleetwood Mac", 1978, "The Chain");
+			// METHOD USES AN OPTIONAL VERSION OF THE MUSIC OBJECT
+			Optional<Music> opt = Optional.of(returned);
 			// UPDATED VERSION:
-			Animals updated = new Animals(id, toUpdate.getBreed(), toUpdate.getAge(), toUpdate.getGender());
+			Music updated = new Music(id, toUpdate.getArtist(), toUpdate.getYear(), toUpdate.getSong());
 			// WHEN
 			Mockito.when(this.rep.findById(id)).thenReturn(opt);
 			Mockito.when(this.rep.save(updated)).thenReturn(updated);
@@ -110,7 +112,7 @@ public class AnimalsServiceDBTest {
 			// GIVEN
 			Long id = 1L;//user input
 			// Optional Chocolate
-			Optional<Animals> optChoco = Optional.of(returned);
+			Optional<Music> optChoco = Optional.of(returned);
 			// WHEN
 			Mockito.when(this.rep.findById(id)).thenReturn(optChoco);
 			// THEN

@@ -1,7 +1,8 @@
-package com.example.animals.rest;
+package com.example.music.rest;
 
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -18,14 +19,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultMatcher;
 
+import com.example.music.domain.Music;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qa.animals.domain.Animals;
 
 @SpringBootTest
 @AutoConfigureMockMvc //acts like your postman - makes the test requests
-@Sql(scripts = {"classpath:animals-schema.sql","classpath:animals-data.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)// PRE-POPULATE OUT H2 DB
+@Sql(scripts = {"classpath:music-schema.sql","classpath:music-data.sql"}, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)// PRE-POPULATE OUT H2 DB
 @ActiveProfiles("test")//run this test class on the db in the application-test.properties
-public class AnimalsControllerTest {
+public class MusicControllerTest {
 	
 	@Autowired
 	private MockMvc mock; //TO MOCK THE REQUESTS
@@ -38,14 +39,14 @@ public class AnimalsControllerTest {
 		//--request
 		// type, url, body?
 		//body - JSON - Object
-		Animals create = new Animals("Bird",5,"M");//object
+		Music create = new Music("Oasis",2000,"Wonderwall");//object
 		//convert into JSON STRING
 		String createJSON =this.map.writeValueAsString(create);
 		//build up the mock request
 		RequestBuilder mockRequest = post("/create").contentType(MediaType.APPLICATION_JSON).content(createJSON);
 		//--response
 		// body(JSON with id)
-		Animals saved = new Animals(2L, "Bird",5,"M");
+		Music saved = new Music(2L, "Oasis",2000,"Wonderwall");
 		//convert into JSON STRING
 		String savedJSON =this.map.writeValueAsString(saved);
 		//--test response is correct (status + body)

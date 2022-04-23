@@ -1,19 +1,20 @@
-package com.example.animals.service;
+package com.example.music.service;
 
 import java.util.List;
 
-import com.example.animals.domain.Animals;
 
-public interface AnimalsInterface<T> {
+import com.example.music.domain.Music;
+
+public interface MusicInterface<T> {
 	
 	//abstract methods for each of the CRUD
 	
-	Animals create(Animals x);
+	Music create(Music x);
 	
-	List<Animals> read();
+	List<Music> read();
 	
-	Animals update(T id, Animals y);
+	Music update(T id, Music y);
 	
-	Animals delete(T id);
+	Music delete(T id);
 
 }

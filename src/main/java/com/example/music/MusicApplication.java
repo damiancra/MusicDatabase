@@ -1,13 +1,14 @@
-package com.example.animals;
+package com.example.music;
 
 import org.springframework.boot.SpringApplication;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AnimalsApplication {
+public class MusicApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AnimalsApplication.class, args);
+		SpringApplication.run(MusicApplication.class, args);
 	}
 
 }

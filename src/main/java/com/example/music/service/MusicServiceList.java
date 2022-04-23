@@ -1,48 +1,49 @@
-package com.example.animals.service;
+package com.example.music.service;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.animals.domain.Animals;
+import com.example.music.domain.Music;
 
 @Service
-public class AnimalsServiceList implements AnimalsInterface<Integer> {
+public class MusicServiceList implements MusicInterface<Integer> {
 	
 	//STORE INFO IN, ALTERNATIVE TO DB:
-			private List<Animals> animals = new ArrayList<>();
+			private List<Music> music = new ArrayList<>();
 
 	@Override
-	public Animals create(Animals x) {
-		x.setId((long) this.animals.indexOf(x));//added this to update id variable with array index
-		this.animals.add(x);
-		Animals created = this.animals.get(this.animals.size() -1);
+	public Music create(Music x) {
+		x.setId((long) this.music.indexOf(x));//added this to update id variable with array index
+		this.music.add(x);
+		Music created = this.music.get(this.music.size() -1);
 		return created;
 	}
 
 	@Override
-	public List<Animals> read() {
+	public List<Music> read() {
 		// TODO Auto-generated method stub
-		return this.animals;
+		return this.music;
 	}
 	
-	public Animals readOne(Integer id) {
+	public Music readOne(Integer id) {
 		// TODO Auto-generated method stub
-		return this.animals.get(id);
+		return this.music.get(id);
 	}
 
 	@Override
-	public Animals update(Integer id, Animals y) {
+	public Music update(Integer id, Music y) {
 		// TODO Auto-generated method stub
-		this.animals.set(id, y);
-		return this.animals.get(id);
+		this.music.set(id, y);
+		return this.music.get(id);
 	}
 
 	@Override
-	public Animals delete(Integer id) {
+	public Music delete(Integer id) {
 		// TODO Auto-generated method stub
-		return this.animals.remove((int)id);
+		return this.music.remove((int)id);
 	}
 
 }

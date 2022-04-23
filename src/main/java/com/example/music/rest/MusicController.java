@@ -1,6 +1,7 @@
-package com.example.animals.rest;
+package com.example.music.rest;
 
 import java.util.List;
+
 
 import javax.websocket.server.PathParam;
 
@@ -14,15 +15,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.animals.domain.Animals;
-import com.example.animals.service.AnimalsServiceDB;
+import com.example.music.domain.Music;
+import com.example.music.service.MusicServiceDB;
 
 @RestController
-public class AnimalsController {
+public class MusicController {
 	
-	private AnimalsServiceDB service; //CDI - context & dependency injection
+	private MusicServiceDB service; //CDI - context & dependency injection
 	
-	public AnimalsController(AnimalsServiceDB service) {
+	public MusicController(MusicServiceDB service) {
 		super();
 		this.service = service;
 	}
@@ -31,33 +32,33 @@ public class AnimalsController {
 	
 	//CREATE
 	@PostMapping("/create")
-	public ResponseEntity<Animals> createAnimal(@RequestBody Animals a) {
-		return new ResponseEntity<Animals>(this.service.create(a), HttpStatus.CREATED);
+	public ResponseEntity<Music> createMusic(@RequestBody Music a) {
+		return new ResponseEntity<Music>(this.service.create(a), HttpStatus.CREATED);
 
 	}
 	
 	//READ
 		@GetMapping("readAll")
-		public List<Animals> readAnimal() {
+		public List<Music> readMusic() {
 			return this.service.read();
 		}
 		
 	//READ BY ID
 		@GetMapping("/readById/{id}")
-		public Animals getById(@PathVariable Long id) {
+		public Music getById(@PathVariable Long id) {
 			return this.service.readOne(id);
 		}
 		
 		
 	//UPDATE
 		@PutMapping("/update/{id}")
-		public Animals update(@PathVariable Long id, @RequestBody Animals updated) {
+		public Music update(@PathVariable Long id, @RequestBody Music updated) {
 			return this.service.update(id, updated);
 		}
 		
 	//DELETE
 		@DeleteMapping("/delete")
-		public Animals delete(@PathParam("id") Long id) {
+		public Music delete(@PathParam("id") Long id) {
 			return this.service.delete(id);
 		}
 		

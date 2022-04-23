@@ -1,1 +1,1 @@
-package com.example.animals.domain;
+package com.example.music.domain;
