@@ -2,8 +2,6 @@ package com.example.music.rest;
 
 import java.util.List;
 
-
-
 import javax.websocket.server.PathParam;
 
 import org.springframework.http.HttpStatus;
@@ -39,7 +37,7 @@ public class MusicController {
 	}
 	
 	//READ
-		@GetMapping("readAll")
+		@GetMapping("/readAll")
 		public List<Music> readMusic() {
 			return this.service.read();
 		}
