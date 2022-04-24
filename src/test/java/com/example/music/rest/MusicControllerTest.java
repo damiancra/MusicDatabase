@@ -5,6 +5,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 
 
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -47,7 +48,7 @@ public class MusicControllerTest {
 		RequestBuilder mockRequest = post("/create").contentType(MediaType.APPLICATION_JSON).content(createJSON);
 		//--response
 		// body(JSON with id)
-		Music saved = new Music(2L, "Oasis",2000,"Wonderwall");
+		Music saved = new Music(5L, "Oasis",2000,"Wonderwall");
 		//convert into JSON STRING
 		String savedJSON =this.map.writeValueAsString(saved);
 		//--test response is correct (status + body)
