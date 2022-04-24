@@ -56,8 +56,8 @@ public class MusicController {
 		}
 		
 	//DELETE
-		@DeleteMapping("/delete")
-		public Music delete(@PathParam("id") Long id) {
+		@DeleteMapping("/delete/{id}")
+		public Music delete(@PathVariable Long id) {
 			return this.service.delete(id);
 		}
 		
