@@ -42,5 +42,4 @@ Better pre code planning and use of boards to follow a set build, test and imple
 **DELETE**
 <br>
 ![Delete_Postman](https://user-images.githubusercontent.com/98022326/165142995-8e8650a9-ba58-48f6-8657-505bd6df1dea.PNG)
-![Delete_Pre_Postman](https://user-images.githubusercontent.com/98022326/165142996-3e5e8aab-1fa5-4089-ab11-416dba24faaf.PNG)
 ![Delete_Post_Postman](https://user-images.githubusercontent.com/98022326/165142993-23892805-0346-48b0-b601-5faf95feedce.PNG)
