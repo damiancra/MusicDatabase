@@ -46,9 +46,11 @@ Better pre code planning and use of boards to follow a set build, test and imple
 <br>
 **DATABASE**
 <br>
+<br>
 ![SQL_Select](https://user-images.githubusercontent.com/98022326/165235977-4b02bb70-b323-4871-8b18-475842a70166.PNG)
 <br>
 **TESTING**
+<br>
 <br>
 ![JUnit_Test_Result](https://user-images.githubusercontent.com/98022326/165236058-d09170d4-8fcc-45b0-b3d8-6694f0b04296.PNG)
 
