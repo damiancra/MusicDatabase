@@ -59,7 +59,6 @@ Better pre code planning and use of boards to follow a set build, test and imple
 ![ERD](https://user-images.githubusercontent.com/98022326/165238335-e30bd4ac-6c1b-4150-b880-9fc96678ebeb.PNG)
 <br>
 ## ADDITIONAL INFO
-<br>
 ### RISK ASSESSMENT
 [Risk Assessment.pdf](https://github.com/damiancra/MusicDatabase/files/8560860/Risk.Assessment.pdf)
 <br>
