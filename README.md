@@ -36,7 +36,6 @@ Better pre code planning and use of boards to follow a set build, test and imple
 <br>
 **UPDATE**
 <br>
-![Update_Pre_Postman](https://user-images.githubusercontent.com/98022326/165143012-a97f1b75-2b18-427a-a101-402cfb751121.PNG)
 ![Update_Postman](https://user-images.githubusercontent.com/98022326/165143007-238aeab6-6954-4c25-b42b-952ba6c3f778.PNG)
 ![Update_Post_Postman](https://user-images.githubusercontent.com/98022326/165143005-2cbf00b0-600a-4433-af18-04f58673f7fe.PNG)
 <br>
