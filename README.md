@@ -57,6 +57,12 @@ Better pre code planning and use of boards to follow a set build, test and imple
 <br>
 <br>
 ![ERD](https://user-images.githubusercontent.com/98022326/165238335-e30bd4ac-6c1b-4150-b880-9fc96678ebeb.PNG)
-
+<br>
+## ADDITIONAL INFO
+### RISK ASSESSMENT
+[Risk Assessment.pdf](https://github.com/damiancra/MusicDatabase/files/8560860/Risk.Assessment.pdf)
+<br>
+### PROJECT MANAGEMENT
+A Jira Board was not completed for this project prior to commencement, best practice would have been to do this though. Inclusion of user stories, acceptance criteria, story points, prioritisation via MoSCoW methodology and tasks needed to complete the project would have been included.
 
 
